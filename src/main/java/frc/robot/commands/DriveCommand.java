@@ -4,6 +4,7 @@ import java.util.function.DoubleSupplier;
 
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import frc.robot.subsystems.DrivetrainSubsystem;
+import frc.robot.Constants;
 
 public class DriveCommand extends CommandBase {
     private final DrivetrainSubsystem m_drivetrainSubsystem;
@@ -20,8 +21,14 @@ public class DriveCommand extends CommandBase {
 
     @Override
     public void execute() {
-        double m_speedLeft = speedLeft.getAsDouble();
-        double m_speedRight = speedRight.getAsDouble();
+        double m_speedLeft = m_drivetrainSubsystem.normalizeJoystickWithDeadband(speedLeft.getAsDouble(),
+                Constants.CONTROLLER_DEADBAND)
+                * Math.abs(m_drivetrainSubsystem.normalizeJoystickWithDeadband(speedLeft.getAsDouble(),
+                        Constants.CONTROLLER_DEADBAND));
+        double m_speedRight = m_drivetrainSubsystem.normalizeJoystickWithDeadband(speedRight.getAsDouble(),
+                Constants.CONTROLLER_DEADBAND)
+                * Math.abs(m_drivetrainSubsystem.normalizeJoystickWithDeadband(speedRight.getAsDouble(),
+                        Constants.CONTROLLER_DEADBAND));
 
         m_drivetrainSubsystem.drive(m_speedLeft, m_speedRight);
     }

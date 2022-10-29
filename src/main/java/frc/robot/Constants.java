@@ -10,9 +10,9 @@ public final class Constants {
         public static final int kDrivetrainMotorRightForwardPort = 2;
         public static final int kDrivetrainMotorRightRearPort = 3;
 
-        public static final Boolean kDrivetrainMotorLeftRearInverted = false;
-        public static final Boolean kDrivetrainMotorLeftForwardInverted = false;
-        public static final Boolean kDrivetrainMotorRightForwardInverted = true;
-        public static final Boolean kDrivetrainMotorRightRearInverted = true;
+        public static final Boolean kDrivetrainMotorLeftRearInverted = true;
+        public static final Boolean kDrivetrainMotorLeftForwardInverted = true;
+        public static final Boolean kDrivetrainMotorRightForwardInverted = false;
+        public static final Boolean kDrivetrainMotorRightRearInverted = false;
     }
 }

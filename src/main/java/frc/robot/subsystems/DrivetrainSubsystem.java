@@ -26,7 +26,7 @@ public class DrivetrainSubsystem implements Subsystem {
         m_rightForwardMotor.setInverted(DrivetrainConstants.kDrivetrainMotorRightForwardInverted);
         m_rightRearMotor.setInverted(DrivetrainConstants.kDrivetrainMotorRightRearInverted);
 
-        m_drivetrain = new DifferentialDrive(m_leftForwardMotor, m_leftRearMotor);
+        m_drivetrain = new DifferentialDrive(m_leftForwardMotor, m_rightForwardMotor);
     }
 
     public void drive(double speedLeft, double speedRight) {
